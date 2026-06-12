@@ -39,7 +39,6 @@ body{
 }
 
 @keyframes subir{
-
     from{
         transform:translateY(0);
     }
@@ -47,11 +46,9 @@ body{
     to{
         transform:translateY(-120vh);
     }
-
 }
 
 .card{
-
     width:700px;
     max-width:90%;
 
@@ -64,11 +61,9 @@ body{
     padding:40px;
 
     box-shadow:0 20px 40px rgba(0,0,0,.15);
-
 }
 
 .badge{
-
     display:inline-block;
 
     background:#dbeafe;
@@ -80,11 +75,9 @@ body{
     border-radius:999px;
 
     font-weight:bold;
-
 }
 
 .progress{
-
     width:100%;
     height:10px;
 
@@ -98,7 +91,6 @@ body{
 }
 
 .progress-bar{
-
     height:100%;
 
     background:#0891b2;
@@ -107,27 +99,22 @@ body{
 }
 
 .title{
-
     text-align:center;
 
     margin-top:20px;
 
     color:#0f172a;
-
 }
 
 .image-container{
-
     margin-top:30px;
 
     display:flex;
 
     justify-content:center;
-
 }
 
 .image-box{
-
     width:300px;
     height:300px;
 
@@ -138,22 +125,18 @@ body{
     border-radius:30px;
 
     box-shadow:0 15px 30px rgba(0,0,0,.2);
-
 }
 
 .image-box img{
-
     width:100%;
     height:100%;
 
     object-fit:cover;
 
     transition:3s;
-
 }
 
 .lock{
-
     position:absolute;
 
     inset:0;
@@ -167,27 +150,21 @@ body{
     align-items:center;
 
     color:white;
-
 }
 
 .lock-icon{
-
     font-size:90px;
-
 }
 
 .lock-text{
-
     margin-top:10px;
 
     font-weight:bold;
 
     letter-spacing:2px;
-
 }
 
 .question{
-
     margin-top:35px;
 
     text-align:center;
@@ -200,7 +177,6 @@ body{
 }
 
 .input{
-
     width:100%;
 
     margin-top:30px;
@@ -214,11 +190,9 @@ body{
     text-align:center;
 
     font-size:18px;
-
 }
 
 .button{
-
     width:100%;
 
     margin-top:15px;
@@ -236,33 +210,25 @@ body{
     font-size:18px;
 
     cursor:pointer;
-
 }
 
 .button:hover{
-
     background:#0e7490;
-
 }
 
 .success{
-
     margin-top:25px;
 
     text-align:center;
-
 }
 
 .success h2{
-
     color:#0e7490;
 
     margin-bottom:15px;
-
 }
 
 .description{
-
     background:#ecfeff;
 
     padding:20px;
@@ -272,11 +238,9 @@ body{
     color:#334155;
 
     line-height:1.8;
-
 }
 
 .next-button{
-
     display:inline-block;
 
     margin-top:20px;
@@ -292,7 +256,96 @@ body{
     font-weight:bold;
 }
 
+@media (max-width: 768px) {
+
+    .card{
+        width:95%;
+        padding:25px;
+        border-radius:25px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .question{
+        font-size:20px;
+        margin-top:25px;
+    }
+
+    .image-box{
+        width:220px;
+        height:220px;
+    }
+
+    .lock-icon{
+        font-size:60px;
+    }
+
+    .lock-text{
+        font-size:14px;
+        text-align:center;
+    }
+
+    .input{
+        font-size:16px;
+        padding:14px;
+    }
+
+    .button{
+        font-size:16px;
+        padding:14px;
+    }
+
+    .description{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .next-button{
+        width:100%;
+        text-align:center;
+        font-size:16px;
+        padding:14px;
+    }
+
+    .badge{
+        font-size:14px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .card{
+        padding:20px;
+    }
+
+    .title{
+        font-size:24px;
+    }
+
+    .question{
+        font-size:18px;
+    }
+
+    .image-box{
+        width:180px;
+        height:180px;
+    }
+
+    .lock-icon{
+        font-size:50px;
+    }
+
+    .heart{
+        font-size:18px !important;
+    }
+
+}
+
 </style>
+
 
 </head>
 
@@ -427,23 +480,33 @@ x-data="{
 
     @if($numero < $total)
 
-        <a
-            href="/fragmento/{{ $numero + 1 }}"
+    <form method="POST" action="/fragmento/proximo">
+
+        @csrf
+
+        <button
+            type="submit"
             class="next-button"
-            style="background:#0891b2;"
+            style="
+                background:#0891b2;
+                border:none;
+                cursor:pointer;
+            "
         >
             Próximo Fragmento →
-        </a>
+        </button>
+
+    </form>
 
     @else
 
-        <a
-            href="/final"
-            class="next-button"
-            style="background:#ec4899;"
-        >
-            Abrir Carta ❤️
-        </a>
+    <a
+        href="/final"
+        class="next-button"
+        style="background:#ec4899;"
+    >
+        Abrir Carta ❤️
+    </a>
 
     @endif
 
