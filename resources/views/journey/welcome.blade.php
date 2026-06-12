@@ -1,4 +1,4 @@
-```blade
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -327,4 +327,4 @@
 
 </body>
 </html>
-```
+
