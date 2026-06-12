@@ -309,6 +309,7 @@ mas se não fosse por isso não seria amor, seria apenas paixão, e o que eu pos
     oooooooooooooooooooooooooooooooooooooooooooooo
     oooooooooooooooooooooooooooooooooooooooooooooo
     oooooooooooooooooooooooooooooooooooooooooooooo
+    </p>
         </section>
 
     </main>
